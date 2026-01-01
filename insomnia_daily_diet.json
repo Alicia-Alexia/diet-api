@@ -1,0 +1,224 @@
+{
+  "_type": "export",
+  "__export_format": 4,
+  "__export_date": "2023-12-30T12:00:00.000Z",
+  "__export_source": "insomnia.desktop.app:v2023.5.8",
+  "resources": [
+    {
+      "_id": "req_create_user",
+      "parentId": "wrk_daily_diet",
+      "modified": 1703948000000,
+      "created": 1703948000000,
+      "url": "{{ _.base_url }}/users",
+      "name": "Create User",
+      "description": "Cria um usuário e define o cookie de sessão.",
+      "method": "POST",
+      "body": {
+        "mimeType": "application/json",
+        "text": "{\n\t\"name\": \"John Doe\",\n\t\"email\": \"johndoe@example.com\"\n}"
+      },
+      "parameters": [],
+      "headers": [
+        {
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "authentication": {},
+      "metaSortKey": -1703948000000,
+      "isPrivate": false,
+      "settingStoreCookies": true,
+      "settingSendCookies": true,
+      "settingDisableRenderRequestBody": false,
+      "settingEncodeUrl": true,
+      "settingRebuildPath": true,
+      "settingFollowRedirects": "global",
+      "_type": "request"
+    },
+    {
+      "_id": "req_create_meal",
+      "parentId": "wrk_daily_diet",
+      "modified": 1703948100000,
+      "created": 1703948100000,
+      "url": "{{ _.base_url }}/meals",
+      "name": "Create Meal",
+      "description": "Cria uma refeição (requer cookie de sessão).",
+      "method": "POST",
+      "body": {
+        "mimeType": "application/json",
+        "text": "{\n\t\"name\": \"Almoço Saudável\",\n\t\"description\": \"Arroz, feijão e frango\",\n\t\"isOnDiet\": true,\n\t\"date\": \"2023-12-30T12:00:00\"\n}"
+      },
+      "parameters": [],
+      "headers": [
+        {
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "authentication": {},
+      "metaSortKey": -1703948100000,
+      "isPrivate": false,
+      "settingStoreCookies": true,
+      "settingSendCookies": true,
+      "settingDisableRenderRequestBody": false,
+      "settingEncodeUrl": true,
+      "settingRebuildPath": true,
+      "settingFollowRedirects": "global",
+      "_type": "request"
+    },
+    {
+      "_id": "req_list_meals",
+      "parentId": "wrk_daily_diet",
+      "modified": 1703948200000,
+      "created": 1703948200000,
+      "url": "{{ _.base_url }}/meals",
+      "name": "List Meals",
+      "description": "Lista todas as refeições do usuário logado.",
+      "method": "GET",
+      "body": {},
+      "parameters": [],
+      "headers": [],
+      "authentication": {},
+      "metaSortKey": -1703948200000,
+      "isPrivate": false,
+      "settingStoreCookies": true,
+      "settingSendCookies": true,
+      "settingDisableRenderRequestBody": false,
+      "settingEncodeUrl": true,
+      "settingRebuildPath": true,
+      "settingFollowRedirects": "global",
+      "_type": "request"
+    },
+    {
+      "_id": "req_get_meal",
+      "parentId": "wrk_daily_diet",
+      "modified": 1703948300000,
+      "created": 1703948300000,
+      "url": "{{ _.base_url }}/meals/{{ _.mealId }}",
+      "name": "Get Meal by ID",
+      "description": "Busca uma refeição específica. Substitua a variável mealId no ambiente.",
+      "method": "GET",
+      "body": {},
+      "parameters": [],
+      "headers": [],
+      "authentication": {},
+      "metaSortKey": -1703948300000,
+      "isPrivate": false,
+      "settingStoreCookies": true,
+      "settingSendCookies": true,
+      "settingDisableRenderRequestBody": false,
+      "settingEncodeUrl": true,
+      "settingRebuildPath": true,
+      "settingFollowRedirects": "global",
+      "_type": "request"
+    },
+    {
+      "_id": "req_update_meal",
+      "parentId": "wrk_daily_diet",
+      "modified": 1703948400000,
+      "created": 1703948400000,
+      "url": "{{ _.base_url }}/meals/{{ _.mealId }}",
+      "name": "Update Meal",
+      "description": "Atualiza uma refeição existente.",
+      "method": "PUT",
+      "body": {
+        "mimeType": "application/json",
+        "text": "{\n\t\"name\": \"Jantar\",\n\t\"description\": \"Pizza (Ops)\",\n\t\"isOnDiet\": false,\n\t\"date\": \"2023-12-30T20:00:00\"\n}"
+      },
+      "parameters": [],
+      "headers": [
+        {
+          "name": "Content-Type",
+          "value": "application/json"
+        }
+      ],
+      "authentication": {},
+      "metaSortKey": -1703948400000,
+      "isPrivate": false,
+      "settingStoreCookies": true,
+      "settingSendCookies": true,
+      "settingDisableRenderRequestBody": false,
+      "settingEncodeUrl": true,
+      "settingRebuildPath": true,
+      "settingFollowRedirects": "global",
+      "_type": "request"
+    },
+    {
+      "_id": "req_delete_meal",
+      "parentId": "wrk_daily_diet",
+      "modified": 1703948500000,
+      "created": 1703948500000,
+      "url": "{{ _.base_url }}/meals/{{ _.mealId }}",
+      "name": "Delete Meal",
+      "description": "Deleta uma refeição pelo ID.",
+      "method": "DELETE",
+      "body": {},
+      "parameters": [],
+      "headers": [],
+      "authentication": {},
+      "metaSortKey": -1703948500000,
+      "isPrivate": false,
+      "settingStoreCookies": true,
+      "settingSendCookies": true,
+      "settingDisableRenderRequestBody": false,
+      "settingEncodeUrl": true,
+      "settingRebuildPath": true,
+      "settingFollowRedirects": "global",
+      "_type": "request"
+    },
+    {
+      "_id": "req_metrics",
+      "parentId": "wrk_daily_diet",
+      "modified": 1703948600000,
+      "created": 1703948600000,
+      "url": "{{ _.base_url }}/meals/metrics",
+      "name": "Get Metrics",
+      "description": "Retorna as estatísticas do usuário.",
+      "method": "GET",
+      "body": {},
+      "parameters": [],
+      "headers": [],
+      "authentication": {},
+      "metaSortKey": -1703948600000,
+      "isPrivate": false,
+      "settingStoreCookies": true,
+      "settingSendCookies": true,
+      "settingDisableRenderRequestBody": false,
+      "settingEncodeUrl": true,
+      "settingRebuildPath": true,
+      "settingFollowRedirects": "global",
+      "_type": "request"
+    },
+    {
+      "_id": "env_default",
+      "parentId": "wrk_daily_diet",
+      "modified": 1703948000000,
+      "created": 1703948000000,
+      "name": "Base Environment",
+      "data": {
+        "base_url": "http://localhost:3333",
+        "mealId": "SUBSTITUA_PELO_UUID_DA_REFEICAO"
+      },
+      "dataPropertyOrder": {
+        "&": [
+          "base_url",
+          "mealId"
+        ]
+      },
+      "color": null,
+      "isPrivate": false,
+      "metaSortKey": 1703948000000,
+      "_type": "environment"
+    },
+    {
+      "_id": "wrk_daily_diet",
+      "parentId": null,
+      "modified": 1703948000000,
+      "created": 1703948000000,
+      "name": "Daily Diet API",
+      "description": "Collection para teste da API Daily Diet",
+      "scope": "collection",
+      "_type": "workspace"
+    }
+  ]
+}
