@@ -6,7 +6,7 @@ import fastifyCors from '@fastify/cors'
 
 export const app = fastify()
 app.register(fastifyCors, {
-  origin: ['http://localhost:5173', 'http://127.0.0.1:5173', 'https://daily-diet-web-coral.vercel.app/login'],
+  origin: ['http://localhost:5173', 'http://127.0.0.1:5173', 'https://daily-diet-web-coral.vercel.app'],
   credentials: true, 
   methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'],
 })
