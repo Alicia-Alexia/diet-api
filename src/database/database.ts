@@ -4,7 +4,13 @@ import {env} from '../env/index.js'
 export const config: setupKenex.Knex.Config = {
     client: env.DATABASE_CLIENT,
     connection:
-    env.DATABASE_CLIENT === 'sqlite'? 'sqlite3' : 'pg',
+    env.DATABASE_CLIENT === 'sqlite'
+      ? { filename: env.DATABASE_URL }
+      : { 
+          connectionString: env.DATABASE_URL,
+          
+          ssl: { rejectUnauthorized: false },
+      },
     useNullAsDefault: true,
     migrations: {
         extension: 'ts',
