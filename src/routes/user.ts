@@ -41,11 +41,15 @@ export async function usersRoutes(app: FastifyInstance) {
     reply.cookie("session_id", sessionId, {
       path: "/",
       maxAge: 1000 * 60 * 60 * 24 * 7, // 7 days
+      secure: true,      
+      sameSite: 'none',  
+      httpOnly: true,
     });
     return reply.status(201).send();
   });
   app.post("/logout", async (request, reply) => {
-    reply.clearCookie("session_id", { path: "/" });
+    reply.clearCookie("session_id", { path: "/", secure: true,
+      sameSite: 'none' });
     return reply.status(200).send({ message: "Logged out successfully" });
   });
 
