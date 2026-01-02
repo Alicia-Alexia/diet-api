@@ -8,8 +8,8 @@
     "knex": "node --import tsx ./node_modules/knex/bin/cli.js",
     "lint": "eslint src --ext .ts --fix",
     "test": "node --import tsx ./node_modules/vitest/vitest.mjs run --pool=forks --no-file-parallelism",
-    "build": "tsup src/server.ts --out-dir build",
-    "start": "node build/server.js"
+    "build": "echo 'Build skipped'",
+    "start": "tsx src/server.ts"
   },
   "keywords": [],
   "author": "",
