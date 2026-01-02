@@ -8,7 +8,7 @@
     "knex": "node --import tsx ./node_modules/knex/bin/cli.js",
     "lint": "eslint src --ext .ts --fix",
     "test": "node --import tsx ./node_modules/vitest/vitest.mjs run --pool=forks --no-file-parallelism",
-    "build": "tsup src --out-dir build",    
+    "build": "tsup src --out-dir build",
     "start": "node build/server.js"
   },
   "keywords": [],
@@ -20,6 +20,7 @@
     "@types/supertest": "^6.0.3",
     "sqlite3": "^5.1.7",
     "supertest": "^7.1.4",
+    "tsup": "^8.5.1",
     "tsx": "^4.21.0",
     "typescript": "^5.9.3",
     "vitest": "^4.0.16"
